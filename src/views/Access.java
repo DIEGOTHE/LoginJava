@@ -44,6 +44,12 @@ public class Access extends javax.swing.JFrame {
 
         lblPassword.setText("Clave");
 
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPasswordActionPerformed(evt);
+            }
+        });
+
         btnAccept.setText("Aceptar");
         btnAccept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,10 +107,15 @@ public class Access extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
+        String realUsername = "elva.lazo";
+        String realPassword = "Macoy123";
         String userName = this.txtUser.getText();
         String userPass = String.valueOf(this.txtPassword.getPassword());
-        System.out.println(userName);
-        System.out.println(userPass);
+        if (userName.equals(realUsername) && userPass.equals(realPassword)) {
+            JOptionPane.showMessageDialog(this, "BIENVENIDO/A!", "ACCESO", JOptionPane.INFORMATION_MESSAGE);  
+        } else {
+            JOptionPane.showMessageDialog(this, "Nomre de Usuario / Clave Incorrecto", "ACCESO", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnAcceptActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
@@ -113,6 +124,11 @@ public class Access extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_txtPasswordActionPerformed
 
     /**
      * @param args the command line arguments
